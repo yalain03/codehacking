@@ -28,8 +28,8 @@
         </div>
 
         <div class="form-group">
-            {!! Form::label('file', 'Photo:') !!}
-            {!! Form::file('file', null, ['class'=>'btn btn-default']) !!}
+            {!! Form::label('photo_id', 'Photo:') !!}
+            {!! Form::file('photo_id', null, ['class'=>'btn btn-default']) !!}
         </div>
 
         <div class="form-group {!! $errors->has('password') ? 'has-error' : '' !!}">
