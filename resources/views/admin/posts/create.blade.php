@@ -12,7 +12,7 @@
 
         <div class="form-group {!! $errors->has('category_id') ? 'has-error' : '' !!}">
             {!! Form::label('category_id', 'Category:') !!}
-            {!! Form::select('category_id', array(1=>'PHP', 0=>'JavaScript'), null, ['class'=>'form-control']) !!}
+            {!! Form::select('category_id', [''=>'Choose option'] + $categories, null, ['class'=>'form-control']) !!}
             {!! $errors->first('category_id', '<small class="help-block">:message</small>') !!}
         </div>
 
