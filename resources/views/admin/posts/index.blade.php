@@ -11,8 +11,8 @@
                 <th>Photo</th>
                 <th>Title</th>
                 <th>Body</th>
-                <th>Created</th>
-                <th>Updated</th>
+                <th>View Posts</th>
+                <th>View Comments</th>
             </tr>
         </thead>
         <tbody>
@@ -25,8 +25,8 @@
                         <td><img height="50" width="50" src="{{ $post->photo ? $post->photo->file : 'http://placehold.it/400*400' }}" alt="None"></td>
                         <td>{{$post->title}}</td>
                         <td>{{str_limit($post->body, 15)}}</td>
-                        <td>{{$post->created_at->diffForHumans()}}</td>
-                        <td>{{$post->updated_at->diffForHumans()}}</td>
+                        <td><a href="{{route('home.post', $post->id)}}">View Post</a></td>
+                        <td><a href="{{route('admin.comments.show', $post->id)}}">View Comments</a></td>
                     </tr>
                 @endforeach
             @endif

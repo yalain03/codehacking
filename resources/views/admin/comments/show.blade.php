@@ -4,14 +4,14 @@
     <h1>Comments</h1>
 
     @if(count($comments) > 0)
-    <table class="table">
-        <thead>
+        <table class="table">
+            <thead>
             <td>Id</td>
             <td>Author</td>
             <td>Email</td>
             <td>Body</td>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             @foreach($comments as $comment)
                 <tr>
                     <td>{{$comment->id}}</td>
@@ -25,7 +25,7 @@
                             <input type="hidden" name="is_active" value="0">
 
                             <div class="form-group">
-                                {!! Form::submit('Disapprove', ['class'=>'btn btn-warning']) !!}
+                                {!! Form::submit('Unapprove', ['class'=>'btn btn-warning']) !!}
                             </div>
                             {!! Form::close() !!}
                         @else
@@ -41,14 +41,14 @@
                     <td>
                         {!! Form::open(['method'=>'DELETE', 'action'=>['PostCommentsController@destroy', $comment->id]]) !!}
 
-                            <div class="form-group">
-                                {!! Form::submit('Delete', ['class'=>'btn btn-danger']) !!}
-                            </div>
+                        <div class="form-group">
+                            {!! Form::submit('Delete', ['class'=>'btn btn-danger']) !!}
+                        </div>
                         {!! Form::close() !!}
                     </td>
                 </tr>
             @endforeach
-        </tbody>
-    </table>
+            </tbody>
+        </table>
     @endif
 @endsection
