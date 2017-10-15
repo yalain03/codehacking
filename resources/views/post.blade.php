@@ -92,7 +92,7 @@
                             <div class="form-group">
                                 <input type="hidden" name="comment_id" value="{{$comment->id}}">
                                 {!! Form::label('body', '') !!}
-                                {!! Form::text('body', null, ['class'=>'form-control']) !!}
+                                {!! Form::textarea('body', null, ['class'=>'form-control']) !!}
                             </div>
                             <div class="form-group">
                                 {!! Form::submit('Submit', ['class'=>'btn btn-success']) !!}
